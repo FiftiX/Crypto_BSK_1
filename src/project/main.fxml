@@ -87,7 +87,7 @@
                                 <Font name="System Bold" size="23.0" />
                             </font>
                         </Button>
-                        <Button fx:id="DecodeButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Decode" GridPane.columnIndex="1">
+                        <Button fx:id="DecodeButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#decodeAction" text="Decode" GridPane.columnIndex="1">
                             <font>
                                 <Font name="System Bold" size="23.0" />
                             </font>

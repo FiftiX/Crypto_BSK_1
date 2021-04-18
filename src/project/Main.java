@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 import java.util.concurrent.CountDownLatch;
 
+import static java.lang.Integer.parseInt;
+
 public class Main extends Application{
 
     @FXML
@@ -54,32 +56,68 @@ public class Main extends Application{
             case 0:
                 text = Text.getText();
                 n = NWord.getText();
-                TextResult.setText(n);
+                RailFence railFence = new RailFence(text, parseInt(n));
+                TextResult.setText(railFence.code());
                 break;
             case 1:
+                text = Text.getText();
 
                 break;
             case 2:
-
+                text = Text.getText();
+                key = Key.getText();
                 break;
             case 3:
-
+                text = Text.getText();
+                key = Key.getText();
 
                 break;
             case 4:
-
+                text = Text.getText();
+                a = AWord.getText();
+                b = BWord.getText();
                 break;
             case 5:
-
+                text = Text.getText();
+                key = Key.getText();
 
                 break;
         }
-        //CodeButton.setText("CLICK ME");
-        //TextResult.setText("JOJOJOJOJOJOJ");
     }
     @FXML
     public void decodeAction(){
+        String text, key, n, a, b;
+        switch(param){
+            case 0:
+                text = Text.getText();
+                n = NWord.getText();
+                RailFence railFence = new RailFence(text, parseInt(n));
+                TextResult.setText(railFence.decode());
+                break;
+            case 1:
+                text = Text.getText();
 
+                break;
+            case 2:
+                text = Text.getText();
+                key = Key.getText();
+                break;
+            case 3:
+                text = Text.getText();
+                key = Key.getText();
+
+                break;
+            case 4:
+                text = Text.getText();
+                a = AWord.getText();
+                b = BWord.getText();
+                break;
+            case 5:
+                text = Text.getText();
+                key = Key.getText();
+
+                break;
+        }
     }
 
 
