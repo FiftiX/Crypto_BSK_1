@@ -61,26 +61,33 @@ public class Main extends Application{
                 break;
             case 1:
                 text = Text.getText();
-
+                Macierzowy2a macierzowy2a = new Macierzowy2a(text);
+                TextResult.setText(macierzowy2a.code());
                 break;
             case 2:
                 text = Text.getText();
                 key = Key.getText();
+                Macierzowy2b macierzowy2b = new Macierzowy2b(text, key);
+                TextResult.setText(macierzowy2b.code());
                 break;
             case 3:
                 text = Text.getText();
                 key = Key.getText();
-
+                Macierzowy2c macierzowy2c = new Macierzowy2c(text, key);
+                TextResult.setText(macierzowy2c.code());
                 break;
             case 4:
                 text = Text.getText();
                 a = AWord.getText();
                 b = BWord.getText();
+                Cezara cezara = new Cezara(text,parseInt(a), parseInt(b));
+                TextResult.setText(cezara.code());
                 break;
             case 5:
                 text = Text.getText();
                 key = Key.getText();
-
+                Vigenerea vigenerea = new Vigenerea(text, key);
+                TextResult.setText(vigenerea.code());
                 break;
         }
     }
@@ -96,26 +103,33 @@ public class Main extends Application{
                 break;
             case 1:
                 text = Text.getText();
-
+                Macierzowy2a macierzowy2a = new Macierzowy2a(text);
+                TextResult.setText(macierzowy2a.decode());
                 break;
             case 2:
                 text = Text.getText();
                 key = Key.getText();
+                Macierzowy2b macierzowy2b = new Macierzowy2b(text, key);
+                TextResult.setText(macierzowy2b.decode());
                 break;
             case 3:
                 text = Text.getText();
                 key = Key.getText();
-
+                Macierzowy2c macierzowy2c = new Macierzowy2c(text, key);
+                TextResult.setText(macierzowy2c.decode());
                 break;
             case 4:
                 text = Text.getText();
                 a = AWord.getText();
                 b = BWord.getText();
+                Cezara cezara = new Cezara(text,parseInt(a), parseInt(b));
+                TextResult.setText(cezara.decode());
                 break;
             case 5:
                 text = Text.getText();
                 key = Key.getText();
-
+                Vigenerea vigenerea = new Vigenerea(text, key);
+                TextResult.setText(vigenerea.decode());
                 break;
         }
     }
@@ -193,14 +207,8 @@ public class Main extends Application{
         }
     }
 
-
-
-
-
     public static void main(String[] args)
     {
-
         launch(args);
     }
-
 }
