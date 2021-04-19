@@ -10,11 +10,11 @@ public class Cezara {
         this.b = b;
     }
 
-    public String code(){
+    public String encrypt(){
         return "Cezara code";
     }
 
-    public String decode(){
+    public String decrypt(){
         return "Cezara decode";
     }
 }

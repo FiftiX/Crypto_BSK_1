@@ -8,12 +8,12 @@ public class Vigenerea {
         this.key = key;
     }
 
-    public String code(){
+    public String encrypt(){
 
         return "Vigenerea code";
     }
 
-    public String decode(){
+    public String decrypt(){
 
         return "Vigenerea decode";
     }

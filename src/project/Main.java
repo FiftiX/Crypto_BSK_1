@@ -1,20 +1,16 @@
 package project;
 
-
-import com.sun.jdi.Value;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.util.concurrent.CountDownLatch;
 
 import static java.lang.Integer.parseInt;
 
@@ -23,17 +19,12 @@ public class Main extends Application{
     @FXML
     private ComboBox ComboBox1;
     @FXML
-    private Button CodeButton, DecodeButton;
-    @FXML
     private TextField TextResult, AWord, BWord, NWord, Key, Text;
     @FXML
     private Label NLabel, KeyLabel, ALabel, BLabel;
 
     private int param;
 
-
-
-    //final CountDownLatch countDownLatch = new CountDownLatch(1);
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -57,40 +48,41 @@ public class Main extends Application{
                 text = Text.getText();
                 n = NWord.getText();
                 RailFence railFence = new RailFence(text, parseInt(n));
-                TextResult.setText(railFence.code());
+                TextResult.setText(railFence.encrypt());
                 break;
             case 1:
                 text = Text.getText();
                 Macierzowy2a macierzowy2a = new Macierzowy2a(text);
-                TextResult.setText(macierzowy2a.code());
+                TextResult.setText(macierzowy2a.encrypt());
                 break;
             case 2:
                 text = Text.getText();
                 key = Key.getText();
                 Macierzowy2b macierzowy2b = new Macierzowy2b(text, key);
-                TextResult.setText(macierzowy2b.code());
+                TextResult.setText(macierzowy2b.encrypt());
                 break;
             case 3:
                 text = Text.getText();
                 key = Key.getText();
                 Macierzowy2c macierzowy2c = new Macierzowy2c(text, key);
-                TextResult.setText(macierzowy2c.code());
+                TextResult.setText(macierzowy2c.encrypt());
                 break;
             case 4:
                 text = Text.getText();
                 a = AWord.getText();
                 b = BWord.getText();
                 Cezara cezara = new Cezara(text,parseInt(a), parseInt(b));
-                TextResult.setText(cezara.code());
+                TextResult.setText(cezara.encrypt());
                 break;
             case 5:
                 text = Text.getText();
                 key = Key.getText();
                 Vigenerea vigenerea = new Vigenerea(text, key);
-                TextResult.setText(vigenerea.code());
+                TextResult.setText(vigenerea.encrypt());
                 break;
         }
     }
+
     @FXML
     public void decodeAction(){
         String text, key, n, a, b;
@@ -99,42 +91,40 @@ public class Main extends Application{
                 text = Text.getText();
                 n = NWord.getText();
                 RailFence railFence = new RailFence(text, parseInt(n));
-                TextResult.setText(railFence.decode());
+                TextResult.setText(railFence.decrypt());
                 break;
             case 1:
                 text = Text.getText();
                 Macierzowy2a macierzowy2a = new Macierzowy2a(text);
-                TextResult.setText(macierzowy2a.decode());
+                TextResult.setText(macierzowy2a.decrypt());
                 break;
             case 2:
                 text = Text.getText();
                 key = Key.getText();
                 Macierzowy2b macierzowy2b = new Macierzowy2b(text, key);
-                TextResult.setText(macierzowy2b.decode());
+                TextResult.setText(macierzowy2b.decrypt());
                 break;
             case 3:
                 text = Text.getText();
                 key = Key.getText();
                 Macierzowy2c macierzowy2c = new Macierzowy2c(text, key);
-                TextResult.setText(macierzowy2c.decode());
+                TextResult.setText(macierzowy2c.decrypt());
                 break;
             case 4:
                 text = Text.getText();
                 a = AWord.getText();
                 b = BWord.getText();
                 Cezara cezara = new Cezara(text,parseInt(a), parseInt(b));
-                TextResult.setText(cezara.decode());
+                TextResult.setText(cezara.decrypt());
                 break;
             case 5:
                 text = Text.getText();
                 key = Key.getText();
                 Vigenerea vigenerea = new Vigenerea(text, key);
-                TextResult.setText(vigenerea.decode());
+                TextResult.setText(vigenerea.decrypt());
                 break;
         }
     }
-
-
 
     @FXML
     public void onChange(){

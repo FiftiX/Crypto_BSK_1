@@ -8,12 +8,12 @@ public class Macierzowy2b {
         this.key = key;
     }
 
-    public String code(){
+    public String encrypt(){
 
         return "Macierzowy 2b code";
     }
 
-    public String decode(){
+    public String decrypt(){
 
         return "Macierzowy 2b decode";
     }
