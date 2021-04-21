@@ -11,10 +11,30 @@ public class Cezara {
     }
 
     public String encrypt(){
-        return "Cezara code";
+        char[] tab = text.toCharArray();
+        int[] pomtab = new int[tab.length];
+        String result = "";
+
+        for(int i=0;i<tab.length;i++){
+            pomtab[i] = ((((tab[i]-65)*a)+b) % 26)+65;
+        }
+        for(int v : pomtab){
+            result += (char)v;
+        }
+        return result;
     }
 
     public String decrypt(){
-        return "Cezara decode";
+        char[] tab = text.toCharArray();
+        double[] pomtab = new double[tab.length];
+        String result = "";
+
+        for(int i=0;i<tab.length;i++){
+           pomtab[i] = ((((tab[i]-65)+(26-b))*Math.pow(a,11)) % 26)+65;
+        }
+        for(double v : pomtab){
+            result += (char)v;
+        }
+        return result;
     }
 }
