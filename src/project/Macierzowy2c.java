@@ -35,7 +35,7 @@ public class Macierzowy2c {
             int v = 0;
             for (int j = 0; j < tab.length; j++) {
                 if (v < tab.length) {
-                    if (stab[i] <= stab[j] && (v+stab[i]< stab.length)) {
+                    if (stab[i] <= stab[j] && (v+stab[i]< tab.length)) {
                         result += tab[v + stab[i]];
                     }
                     v += stab[j] + 1;
@@ -76,7 +76,7 @@ public class Macierzowy2c {
             int v = 0;
             for (int j = 0; j < tab.length; j++) {
                 if (v < tab.length) {
-                    if (stab[i] <= stab[j] && (v+stab[i]< stab.length)) {
+                    if (stab[i] <= stab[j] && (v+stab[i]< tab.length)) {
                         tab2[v + stab[i]] = tab[num++];
                     }
                     v += stab[j] + 1;
