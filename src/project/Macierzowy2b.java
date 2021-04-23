@@ -32,7 +32,7 @@ public class Macierzowy2b {
         }
 
         for(int i=0;i<stab.length;i++){
-            for(int j=0;j<stab.length;j++){
+            for(int j=0;j<=stab.length;j++){
                 if(((stab.length*j)+stab[i])<tab.length)
                     result += tab[(stab.length*j)+stab[i]];
             }
@@ -65,20 +65,29 @@ public class Macierzowy2b {
         char[] tab2 = new char[tab.length];
         int val = tab.length / stab.length;
         int num = tab.length % stab.length;
+        int num2 = num;
         int numadd = 0;
         int pom2;
 
         for(int i=0;i<stab.length;i++){
             pom2 = val;
             if(num>0){
-                pom2++;
+                for(int k=0;k<num2;k++){
+                    if(ltab[k]==i)
+                        pom2++;
+                }
             }
             for(int j=0;j<pom2;j++){
-                tab2[stab.length*j+stab[i]]=tab[i*val+j+numadd];
+                if(((stab.length*j)+stab[i])<tab.length)
+                    tab2[stab.length*j+stab[i]]=tab[i*val+j+numadd];
             }
-            if(num>0){
-                numadd++;
-                num--;
+            if(num>0) {
+                for (int k = 0; k < num2; k++) {
+                    if (ltab[k] == i) {
+                        numadd++;
+                        num--;
+                    }
+                }
             }
         }
         return String.valueOf(tab2);
